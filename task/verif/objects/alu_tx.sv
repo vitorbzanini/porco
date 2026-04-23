@@ -20,7 +20,7 @@ class alu_tx extends uvm_sequence_item;
    }
    
    constraint just_sum {
-      sel_ip == 3'b000;
+      sel_ip == 3'b010; // Apenas teste de multiplicação
    } 
 
    constraint alu_data_width { 
