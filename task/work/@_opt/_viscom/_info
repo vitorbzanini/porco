@@ -1,0 +1,6 @@
+__design_bin_path=/sim/vitao/uvm/task
+__design_bin_name_path=/sim/vitao/uvm/task/design.bin
+incr_run_version=360448
+incr_partial_run_stats=0:0
+incr_no_change_stats=0:0
+opt_data_elab=/sim/vitao/uvm/task/work/@_opt

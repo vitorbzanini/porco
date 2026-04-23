@@ -1,0 +1,195 @@
+# do run.do
+# 
+# 1. Compilação
+# Adicionei -sv para forçar SystemVerilog e -timescale para evitar warnings do UVM
+# vlog -sv -timescale=1ns/1ns \
+#      +incdir+verif/ \
+#      +incdir+verif/headers/ \
+#      +incdir+verif/objects/ \
+#      +incdir+verif/components/ \
+#      verif/alu_pkg.sv \
+#      verif/alu_if.sv \
+#      rtl/alu_core.sv \
+#      rtl/alu_top.sv \
+#      verif/top_tb.sv
+# QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 14:58:25 on Apr 19,2026
+# vlog -sv -timescale=1ns/1ns "+incdir+verif/" "+incdir+verif/headers/" "+incdir+verif/objects/" "+incdir+verif/components/" verif/alu_pkg.sv verif/alu_if.sv rtl/alu_core.sv rtl/alu_top.sv verif/top_tb.sv 
+# ** Note: (vlog-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling package alu_pkg
+# ** Note: (vlog-2286) verif/alu_pkg.sv(2): Using implicit +incdir+/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Compiling interface alu_if
+# -- Compiling module alu_core
+# -- Compiling module alu_top
+# -- Compiling module top_tb
+# -- Importing package alu_pkg
+# 
+# Top level modules:
+# 	top_tb
+# End time: 14:58:25 on Apr 19,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 2. Inicia a Simulação chamando o motor do UVM
+# +UVM_TESTNAME diz para a factory qual teste instanciar
+# +UVM_NO_RELNOTES desativa aquele textão gigante de versão do UVM no terminal
+# vsim -voptargs=+acc top_tb +UVM_TESTNAME=alu_test +UVM_NO_RELNOTES +UVM_VERBOSITY=UVM_LOW
+# ** Note: (vsim-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" top_tb "+UVM_TESTNAME=alu_test" "+UVM_NO_RELNOTES" "+UVM_VERBOSITY=UVM_LOW" 
+# Start time: 14:58:25 on Apr 19,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-220) '/soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2025.3 linux_x86_64 Sep 15 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.alu_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.alu_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top_tb(fast)
+# Loading work.alu_if(fast__2)
+# Loading work.alu_top(fast)
+# Loading work.alu_core(fast)
+# Loading /soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# 
+# 3. Configura as formas de onda
+# add wave -position insertpoint sim:/top_tb/dut_if0/*
+# add wave -position insertpoint sim:/top_tb/dut/*
+# 
+# 4. Roda a simulação até o UVM decidir parar (quando o drop_objection zerar)
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# UVM_INFO @ 0: reporter [RNTST] Running test alu_test...
+# ** Error: Assertion error.
+#    Time: 0 ns  Scope: alu_pkg.alu_monitor.build_phase File: verif/components//alu_monitor.sv Line: 18
+# ** Error: Assertion error.
+#    Time: 0 ns  Scope: alu_pkg.alu_monitor.build_phase File: verif/components//alu_monitor.sv Line: 18
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# -----------------------------------------------------------------------
+# Name                         Type                     Size  Value      
+# -----------------------------------------------------------------------
+# uvm_test_top                 alu_test                 -     @472       
+#   m_env                      alu_env                  -     @479       
+#     m_agt_in                 alu_agent                -     @490       
+#       m_drv                  alu_driver               -     @653       
+#         rsp_port             uvm_analysis_port        -     @668       
+#         seq_item_port        uvm_seq_item_pull_port   -     @660       
+#       m_mon                  alu_monitor              -     @536       
+#         mon_analysis_port    uvm_analysis_port        -     @679       
+#       m_seqr                 uvm_sequencer            -     @544       
+#         rsp_export           uvm_analysis_export      -     @551       
+#         seq_item_export      uvm_seq_item_pull_imp    -     @645       
+#         arbitration_queue    array                    0     -          
+#         lock_queue           array                    0     -          
+#         num_last_reqs        integral                 32    'd1        
+#         num_last_rsps        integral                 32    'd1        
+#       mon_analysis_port      uvm_analysis_port        -     @528       
+#       is_active              uvm_active_passive_enum  1     UVM_ACTIVE 
+#     m_agt_out                alu_agent                -     @497       
+#       m_mon                  alu_monitor              -     @704       
+#         mon_analysis_port    uvm_analysis_port        -     @714       
+#       mon_analysis_port      uvm_analysis_port        -     @696       
+#       is_active              uvm_active_passive_enum  1     UVM_PASSIVE
+#     m_scbd                   alu_scoreboard           -     @504       
+#       item_collected_export  uvm_analysis_imp         -     @511       
+# -----------------------------------------------------------------------
+# 
+# UVM_INFO verif/objects//alu_tx.sv(38) @ 12: uvm_test_top.m_env.m_agt_in.m_seqr@@seq.m_item [PRINT_ITEM] '{m_leaf_name:"m_item", m_inst_id:729, use_uvm_seeding:1, m_inst_count:757, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__3@31, begin_event:@uvm_event@4, end_event:@uvm_event@5, m_transaction_id:-1, begin_time:12, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:1, m_depth:2, m_sequencer:@uvm_sequencer__3@1, m_parent_sequence:@alu_seq@1, print_sequence_info:0, m_client_str:"", m_client:@uvm_sequencer__3@1, m_rh:null, issued1:0, issued2:0, valid_ip:0, sel_ip:0, data_ip_1:249, data_ip_2:126, data_op:0, type_name:"alu_tx"}
+# UVM_INFO verif/objects//alu_tx.sv(38) @ 24: uvm_test_top.m_env.m_agt_in.m_seqr@@seq.m_item [PRINT_ITEM] '{m_leaf_name:"m_item", m_inst_id:766, use_uvm_seeding:1, m_inst_count:770, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__3@34, begin_event:@uvm_event@11, end_event:@uvm_event@12, m_transaction_id:-1, begin_time:24, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:1, m_depth:2, m_sequencer:@uvm_sequencer__3@1, m_parent_sequence:@alu_seq@1, print_sequence_info:0, m_client_str:"", m_client:@uvm_sequencer__3@1, m_rh:null, issued1:0, issued2:0, valid_ip:0, sel_ip:0, data_ip_1:67, data_ip_2:55, data_op:0, type_name:"alu_tx"}
+# MONITOR: entradas 249 e 126 e saida = 177 
+# MONITOR: entradas 249 e 126 e saida = 177 
+# DEBUG: data_op=177 expected=177 e pkt.sel_ip = 0
+# UVM_INFO verif/components//alu_scoreboard.sv(28) @ 28: uvm_test_top.m_env.m_scbd [SCBD_MATCH] Sucesso! Sel:0 Res:177
+# Testbench 249 , 126 e saiu 0177
+# UVM_INFO verif/objects//alu_tx.sv(38) @ 36: uvm_test_top.m_env.m_agt_in.m_seqr@@seq.m_item [PRINT_ITEM] '{m_leaf_name:"m_item", m_inst_id:778, use_uvm_seeding:1, m_inst_count:782, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__3@37, begin_event:@uvm_event@17, end_event:@uvm_event@18, m_transaction_id:-1, begin_time:36, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:1, m_depth:2, m_sequencer:@uvm_sequencer__3@1, m_parent_sequence:@alu_seq@1, print_sequence_info:0, m_client_str:"", m_client:@uvm_sequencer__3@1, m_rh:null, issued1:0, issued2:0, valid_ip:1, sel_ip:0, data_ip_1:143, data_ip_2:238, data_op:0, type_name:"alu_tx"}
+# MONITOR: entradas  67 e  55 e saida = 7a 
+# DEBUG: data_op=7a expected=7a e pkt.sel_ip = 0
+# UVM_INFO verif/components//alu_scoreboard.sv(28) @ 40: uvm_test_top.m_env.m_scbd [SCBD_MATCH] Sucesso! Sel:0 Res:7a
+# MONITOR: entradas  67 e  55 e saida = 7a 
+# Testbench  67 ,  55 e saiu 007a
+# UVM_INFO verif/objects//alu_tx.sv(38) @ 48: uvm_test_top.m_env.m_agt_in.m_seqr@@seq.m_item [PRINT_ITEM] '{m_leaf_name:"m_item", m_inst_id:790, use_uvm_seeding:1, m_inst_count:794, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__3@40, begin_event:@uvm_event@23, end_event:@uvm_event@24, m_transaction_id:-1, begin_time:48, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:1, m_depth:2, m_sequencer:@uvm_sequencer__3@1, m_parent_sequence:@alu_seq@1, print_sequence_info:0, m_client_str:"", m_client:@uvm_sequencer__3@1, m_rh:null, issued1:0, issued2:0, valid_ip:1, sel_ip:0, data_ip_1:67, data_ip_2:209, data_op:0, type_name:"alu_tx"}
+# MONITOR: entradas 143 e 238 e saida = 17d 
+# MONITOR: entradas 143 e 238 e saida = 17d 
+# DEBUG: data_op=17d expected=17d e pkt.sel_ip = 0
+# UVM_INFO verif/components//alu_scoreboard.sv(28) @ 52: uvm_test_top.m_env.m_scbd [SCBD_MATCH] Sucesso! Sel:0 Res:17d
+# Testbench 143 , 238 e saiu 017d
+# UVM_INFO verif/objects//alu_tx.sv(38) @ 60: uvm_test_top.m_env.m_agt_in.m_seqr@@seq.m_item [PRINT_ITEM] '{m_leaf_name:"m_item", m_inst_id:802, use_uvm_seeding:1, m_inst_count:806, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__3@43, begin_event:@uvm_event@29, end_event:@uvm_event@30, m_transaction_id:-1, begin_time:60, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:1, m_depth:2, m_sequencer:@uvm_sequencer__3@1, m_parent_sequence:@alu_seq@1, print_sequence_info:0, m_client_str:"", m_client:@uvm_sequencer__3@1, m_rh:null, issued1:0, issued2:0, valid_ip:0, sel_ip:0, data_ip_1:97, data_ip_2:195, data_op:0, type_name:"alu_tx"}
+# MONITOR: entradas  67 e 209 e saida = 114 
+# DEBUG: data_op=114 expected=114 e pkt.sel_ip = 0
+# UVM_INFO verif/components//alu_scoreboard.sv(28) @ 64: uvm_test_top.m_env.m_scbd [SCBD_MATCH] Sucesso! Sel:0 Res:114
+# MONITOR: entradas  67 e 209 e saida = 114 
+# Testbench  67 , 209 e saiu 0114
+# UVM_INFO verif/objects//alu_tx.sv(38) @ 72: uvm_test_top.m_env.m_agt_in.m_seqr@@seq.m_item [PRINT_ITEM] '{m_leaf_name:"m_item", m_inst_id:814, use_uvm_seeding:1, m_inst_count:818, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__3@46, begin_event:@uvm_event@35, end_event:@uvm_event@36, m_transaction_id:-1, begin_time:72, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:1, m_depth:2, m_sequencer:@uvm_sequencer__3@1, m_parent_sequence:@alu_seq@1, print_sequence_info:0, m_client_str:"", m_client:@uvm_sequencer__3@1, m_rh:null, issued1:0, issued2:0, valid_ip:0, sel_ip:0, data_ip_1:206, data_ip_2:156, data_op:0, type_name:"alu_tx"}
+# MONITOR: entradas  97 e 195 e saida = 124 
+# MONITOR: entradas  97 e 195 e saida = 124 
+# DEBUG: data_op=124 expected=124 e pkt.sel_ip = 0
+# UVM_INFO verif/components//alu_scoreboard.sv(28) @ 76: uvm_test_top.m_env.m_scbd [SCBD_MATCH] Sucesso! Sel:0 Res:124
+# Testbench  97 , 195 e saiu 0124
+# UVM_INFO verif/objects//alu_tx.sv(38) @ 84: uvm_test_top.m_env.m_agt_in.m_seqr@@seq.m_item [PRINT_ITEM] '{m_leaf_name:"m_item", m_inst_id:826, use_uvm_seeding:1, m_inst_count:830, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__3@49, begin_event:@uvm_event@41, end_event:@uvm_event@42, m_transaction_id:-1, begin_time:84, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:1, m_depth:2, m_sequencer:@uvm_sequencer__3@1, m_parent_sequence:@alu_seq@1, print_sequence_info:0, m_client_str:"", m_client:@uvm_sequencer__3@1, m_rh:null, issued1:0, issued2:0, valid_ip:1, sel_ip:0, data_ip_1:218, data_ip_2:121, data_op:0, type_name:"alu_tx"}
+# MONITOR: entradas 206 e 156 e saida = 16a 
+# DEBUG: data_op=16a expected=16a e pkt.sel_ip = 0
+# UVM_INFO verif/components//alu_scoreboard.sv(28) @ 88: uvm_test_top.m_env.m_scbd [SCBD_MATCH] Sucesso! Sel:0 Res:16a
+# MONITOR: entradas 206 e 156 e saida = 16a 
+# Testbench 206 , 156 e saiu 016a
+# UVM_INFO verif/objects//alu_tx.sv(38) @ 96: uvm_test_top.m_env.m_agt_in.m_seqr@@seq.m_item [PRINT_ITEM] '{m_leaf_name:"m_item", m_inst_id:838, use_uvm_seeding:1, m_inst_count:842, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__3@52, begin_event:@uvm_event@47, end_event:@uvm_event@48, m_transaction_id:-1, begin_time:96, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:1, m_depth:2, m_sequencer:@uvm_sequencer__3@1, m_parent_sequence:@alu_seq@1, print_sequence_info:0, m_client_str:"", m_client:@uvm_sequencer__3@1, m_rh:null, issued1:0, issued2:0, valid_ip:1, sel_ip:0, data_ip_1:218, data_ip_2:198, data_op:0, type_name:"alu_tx"}
+# MONITOR: entradas 218 e 121 e saida = 153 
+# MONITOR: entradas 218 e 121 e saida = 153 
+# DEBUG: data_op=153 expected=153 e pkt.sel_ip = 0
+# UVM_INFO verif/components//alu_scoreboard.sv(28) @ 100: uvm_test_top.m_env.m_scbd [SCBD_MATCH] Sucesso! Sel:0 Res:153
+# Testbench 218 , 121 e saiu 0153
+# UVM_INFO verif/objects//alu_tx.sv(38) @ 108: uvm_test_top.m_env.m_agt_in.m_seqr@@seq.m_item [PRINT_ITEM] '{m_leaf_name:"m_item", m_inst_id:850, use_uvm_seeding:1, m_inst_count:854, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__3@55, begin_event:@uvm_event@53, end_event:@uvm_event@54, m_transaction_id:-1, begin_time:108, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:1, m_depth:2, m_sequencer:@uvm_sequencer__3@1, m_parent_sequence:@alu_seq@1, print_sequence_info:0, m_client_str:"", m_client:@uvm_sequencer__3@1, m_rh:null, issued1:0, issued2:0, valid_ip:1, sel_ip:0, data_ip_1:73, data_ip_2:243, data_op:0, type_name:"alu_tx"}
+# MONITOR: entradas 218 e 198 e saida = 1a0 
+# DEBUG: data_op=1a0 expected=1a0 e pkt.sel_ip = 0
+# UVM_INFO verif/components//alu_scoreboard.sv(28) @ 112: uvm_test_top.m_env.m_scbd [SCBD_MATCH] Sucesso! Sel:0 Res:1a0
+# MONITOR: entradas 218 e 198 e saida = 1a0 
+# Testbench 218 , 198 e saiu 01a0
+# UVM_INFO verif/objects//alu_tx.sv(38) @ 120: uvm_test_top.m_env.m_agt_in.m_seqr@@seq.m_item [PRINT_ITEM] '{m_leaf_name:"m_item", m_inst_id:862, use_uvm_seeding:1, m_inst_count:866, __m_uvm_status_container:@uvm_status_container@1, events:@uvm_object_string_pool__3@58, begin_event:@uvm_event@59, end_event:@uvm_event@60, m_transaction_id:-1, begin_time:120, end_time:18446744073709551615, accept_time:18446744073709551615, initiator:null, stream_handle:0, tr_handle:0, record_enable:0, m_recorder:null, m_sequence_id:-1, m_use_sequence_info:1, m_depth:2, m_sequencer:@uvm_sequencer__3@1, m_parent_sequence:@alu_seq@1, print_sequence_info:0, m_client_str:"", m_client:@uvm_sequencer__3@1, m_rh:null, issued1:0, issued2:0, valid_ip:0, sel_ip:0, data_ip_1:87, data_ip_2:175, data_op:0, type_name:"alu_tx"}
+# MONITOR: entradas  73 e 243 e saida = 13c 
+# MONITOR: entradas  73 e 243 e saida = 13c 
+# DEBUG: data_op=13c expected=13c e pkt.sel_ip = 0
+# UVM_INFO verif/components//alu_scoreboard.sv(28) @ 124: uvm_test_top.m_env.m_scbd [SCBD_MATCH] Sucesso! Sel:0 Res:13c
+# Testbench  73 , 243 e saiu 013c
+# MONITOR: entradas  87 e 175 e saida = 106 
+# DEBUG: data_op=106 expected=106 e pkt.sel_ip = 0
+# UVM_INFO verif/components//alu_scoreboard.sv(28) @ 136: uvm_test_top.m_env.m_scbd [SCBD_MATCH] Sucesso! Sel:0 Res:106
+# MONITOR: entradas  87 e 175 e saida = 106 
+# Testbench  87 , 175 e saiu 0106
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 232: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   23
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [PRINT_ITEM]    10
+# [RNTST]     1
+# [SCBD_MATCH]    10
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : /soft64/mentor/ferramentas/questa/2025.3/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 232 ns  Iteration: 54  Instance: /top_tb
+# End time: 14:58:26 on Apr 19,2026, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 1
