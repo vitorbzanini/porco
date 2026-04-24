@@ -1,8 +1,0 @@
-2 7 uvm_pkg 4 fast 59 /soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d 1 0 26902528 0 136476 0
-2 14 questa_uvm_pkg 4 fast 59 /soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d 1 0 1481728 26902528 7313 0
-1 7 alu_pkg 4 fast 24 /sim/vitao/uvm/task/work 1 0 1526784 26902528 3318 0
-2 6 alu_if 5 synth 24 /sim/vitao/uvm/task/work 1 0 0 0 0 0
-2 6 alu_if 7 fast__2 24 /sim/vitao/uvm/task/work 1 0 0 0 32 0
-2 8 alu_core 4 fast 24 /sim/vitao/uvm/task/work 1 0 0 0 59 0
-2 7 alu_top 4 fast 24 /sim/vitao/uvm/task/work 1 0 0 0 171 0
-1 6 top_tb 4 fast 24 /sim/vitao/uvm/task/work 1 0 0 27557888 82 0
