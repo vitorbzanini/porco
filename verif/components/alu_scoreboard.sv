@@ -12,7 +12,7 @@ class alu_scoreboard extends uvm_scoreboard;
   endfunction
 
   virtual function void write(alu_tx pkt);
-    bit [15:0] expected_res; // DATA_WIDTH*2
+    bit [31:0] expected_res; // DATA_WIDTH*2
     
     expected_res = multiplier(pkt.data_ip_1, pkt.data_ip_2); 
 

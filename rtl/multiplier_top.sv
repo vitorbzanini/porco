@@ -24,6 +24,28 @@ module alu_top_multiplier
   wire  [(DATA_WIDTH-1):0 ]     data_ip_2_w;
   wire  [((DATA_WIDTH*2)-1):0]  data_op_w;
 
+  logic [3:0] cont;
+  logic ready_op_w;
+
+  assign ready_op = ready_op_w;
+
+  always_ff@ (posedge clk, posedge rst)				//SHIFT REGISTER A 32 bit
+  begin 
+    if (rst == 1'b1) begin
+      ready_op_w <= 1'b1;
+      cont       <= 4'b0000; 
+    end
+    else  begin 
+      if (valid_ip) ready_op_w <= 1'b0;
+      else if (valid_op)  cont <= cont + 4'b0001;
+      else if(cont > 4'b0110) begin 
+        ready_op_w <= 1'b1;
+        cont       <= 4'b0000; 
+      end
+      else if(cont >= 4'b0001) cont <= cont + 4'b0001;
+    end
+  end
+
   // ALU Instantiation
   multiplier mult (
       .in1        (data_ip_1),
@@ -31,7 +53,7 @@ module alu_top_multiplier
       .start      (valid_ip),
       .reset      (rst),
       .clk        (clk),
-      .out        (data_op_w),
+      .out        (data_op),
       .done       (valid_op)  
     );
 

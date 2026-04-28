@@ -5,7 +5,7 @@
 interface alu_if
   /*  package imports  */
   #(
-    parameter DATA_WIDTH  = 8,
+    parameter DATA_WIDTH  = 16,
     parameter SEL_WIDTH   = 3
   )(
     input clk, rst

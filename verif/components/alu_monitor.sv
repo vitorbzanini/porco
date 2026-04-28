@@ -39,7 +39,7 @@ class alu_monitor extends uvm_monitor;
       else begin 
           if (vif.valid_op == 1'b1) begin
 
-            // $display("MONITOR: entradas %d e %d e saida = %0h ", vif.data_ip_1, vif.data_ip_2, vif.data_op);
+            $display("MONITOR: entradas %d e %d e saida = %0h ", vif.data_ip_1, vif.data_ip_2, vif.data_op);
 
             //item = new();
             //item.sel_ip = vif.sel_ip;
