@@ -1,6 +1,6 @@
 //  Module: alu_top
 //
-module alu_top
+module alu_top_multiplier
   /*  package imports  */
   #(
     parameter DATA_WIDTH  = 8,
@@ -26,8 +26,8 @@ module alu_top
 
   // ALU Instantiation
   multiplier mult (
-      .data_ip_1  (data_ip_1_r),
-      .data_ip_2  (data_ip_2_r),
+      .in1        (data_ip_1),
+      .in2        (data_ip_2),
       .start      (valid_ip),
       .reset      (rst),
       .clk        (clk),
@@ -44,4 +44,4 @@ module alu_top
     end
   end
   
-endmodule: alu_top
+endmodule: alu_top_multiplier

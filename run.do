@@ -10,8 +10,8 @@ vlog -sv -timescale=1ns/1ns \
      +incdir+verif/components/ \
      verif/alu_pkg.sv \
      verif/alu_if.sv \
-     rtl/alu_core.sv \
-     rtl/alu_top.sv \
+     rtl/multiplier.sv \
+     rtl/multiplier_top.sv \
      verif/top_tb.sv
 
 # 2. Inicia a Simulação chamando o motor do UVM

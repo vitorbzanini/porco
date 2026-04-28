@@ -1,0 +1,240 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.3 2025.09, Sep 15 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/gabriel.kaizer/Documents/facul/porco
+T_opt
+!i145 1
+!s11d alu_pkg /home/gabriel.kaizer/Documents/facul/porco/work 1 alu_if 1 /home/gabriel.kaizer/Documents/facul/porco/work 
+!s11d uvm_pkg /soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d 1 alu_if 1 /home/gabriel.kaizer/Documents/facul/porco/work 
+!i144 0
+!s110 1777407082
+VUWZUcVdkei^mRW[?]?N^O2
+04 6 4 work top_tb fast 0
+=2-1866da2da02f-69f11469-2c1c8-313f9
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2025.3;82
+R1
+valu_core
+Z3 2verif/alu_pkg.sv|verif/alu_if.sv|rtl/alu_core.sv|rtl/alu_top.sv|verif/top_tb.sv
+Z4 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z5 !s110 1777406923
+!i10b 1
+!s100 3[0zC7k7loeJ7B`]7ecOn1
+Ia6Pi0GW^WGgEGo^_7k=T:2
+S1
+R1
+Z6 w1777405830
+8rtl/alu_core.sv
+Frtl/alu_core.sv
+!i122 0
+L0 3 20
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2025.3;82
+r1
+!s85 0
+31
+Z9 !s108 1777406922.000000
+Z10 !s107 verif/components//alu_test.sv|verif/components//alu_env.sv|verif/components//alu_scoreboard.sv|verif/components//alu_agent.sv|verif/components//alu_monitor.sv|verif/components//alu_driver.sv|verif/components//alu_sequencer.sv|verif/objects//alu_seq.sv|verif/objects//alu_tx.sv|verif/headers//alu_config.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|verif/top_tb.sv|rtl/alu_top.sv|rtl/alu_core.sv|verif/alu_if.sv|verif/alu_pkg.sv|
+Z11 !s90 -reportprogress|300|-sv|-timescale=1ns/1ns|+incdir+verif/|+incdir+verif/headers/|+incdir+verif/objects/|+incdir+verif/components/|verif/alu_pkg.sv|verif/alu_if.sv|rtl/alu_core.sv|rtl/alu_top.sv|verif/top_tb.sv|
+!i113 0
+Z12 o-sv -timescale=1ns/1ns -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 !s92 -sv -timescale=1ns/1ns +incdir+verif/ +incdir+verif/headers/ +incdir+verif/objects/ +incdir+verif/components/ -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+Yalu_if
+Z14 2verif/alu_pkg.sv|verif/alu_if.sv|rtl/multiplier.sv|rtl/multiplier_top.sv|verif/top_tb.sv
+R4
+Z15 !s110 1777407122
+!i10b 1
+!s100 PG]?7bL5cW4z::G69XIK33
+IX^4<]WV=QDi0F^?Z64XND3
+S1
+R1
+R6
+8verif/alu_if.sv
+Fverif/alu_if.sv
+!i122 5
+L0 5 0
+R7
+R8
+r1
+!s85 0
+31
+Z16 !s108 1777407121.000000
+!s107 verif/components//alu_test.sv|verif/components//alu_env.sv|verif/components//alu_scoreboard.sv|verif/components//alu_agent.sv|verif/components//alu_monitor.sv|verif/components//alu_driver.sv|verif/components//alu_sequencer.sv|verif/objects//alu_seq.sv|verif/objects//alu_tx.sv|verif/headers//alu_config.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|verif/top_tb.sv|rtl/multiplier_top.sv|rtl/multiplier.sv|verif/alu_if.sv|verif/alu_pkg.sv|
+Z17 !s90 -reportprogress|300|-sv|-timescale=1ns/1ns|+incdir+verif/|+incdir+verif/headers/|+incdir+verif/objects/|+incdir+verif/components/|verif/alu_pkg.sv|verif/alu_if.sv|rtl/multiplier.sv|rtl/multiplier_top.sv|verif/top_tb.sv|
+!i113 0
+R12
+R13
+R2
+Xalu_pkg
+R14
+!s115 alu_if
+R4
+Z18 DXx6 mtiUvm 7 uvm_pkg 0 22 2@dUL_lDCUQGm?l9?V^Ge3
+R15
+!i10b 1
+!s100 _aV?C8:4P>3RZ]zBkOcO?3
+IK?[njDo2a6>h<K=6ilo7`2
+S1
+R1
+w1777406717
+8verif/alu_pkg.sv
+Fverif/alu_pkg.sv
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+F/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+Fverif/headers//alu_config.svh
+Fverif/objects//alu_tx.sv
+Fverif/objects//alu_seq.sv
+Fverif/components//alu_sequencer.sv
+Fverif/components//alu_driver.sv
+Fverif/components//alu_monitor.sv
+Fverif/components//alu_agent.sv
+Fverif/components//alu_scoreboard.sv
+Fverif/components//alu_env.sv
+Fverif/components//alu_test.sv
+!i122 5
+L0 1 0
+VK?[njDo2a6>h<K=6ilo7`2
+R8
+r1
+!s85 0
+31
+R16
+Z19 !s107 verif/components//alu_test.sv|verif/components//alu_env.sv|verif/components//alu_scoreboard.sv|verif/components//alu_agent.sv|verif/components//alu_monitor.sv|verif/components//alu_driver.sv|verif/components//alu_sequencer.sv|verif/objects//alu_seq.sv|verif/objects//alu_tx.sv|verif/headers//alu_config.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|verif/top_tb.sv|rtl/multiplier_top.sv|rtl/multiplier.sv|verif/alu_if.sv|verif/alu_pkg.sv|
+R17
+!i113 0
+R12
+R13
+R2
+valu_top
+R3
+R4
+R5
+!i10b 1
+!s100 Ta`OTEOlOUDFY2zMO87>g2
+Ihi7R]1feL_]THei>XIHS@3
+S1
+R1
+R6
+8rtl/alu_top.sv
+Frtl/alu_top.sv
+!i122 0
+L0 3 98
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+valu_top_multiplier
+R14
+R4
+R15
+!i10b 1
+!s100 B<f9]QCI9DM0BBIG74o]g2
+IMCHd^enj268[oD0QPeH[22
+S1
+R1
+w1777407073
+8rtl/multiplier_top.sv
+Frtl/multiplier_top.sv
+!i122 5
+L0 3 45
+R7
+R8
+r1
+!s85 0
+31
+R16
+R19
+R17
+!i113 0
+R12
+R13
+R2
+vmultiplier
+R14
+R4
+R15
+!i10b 1
+!s100 mIUhjPUjJlgREiHA9QHWo2
+II:>Z0n:joYMdB8H?jaVY52
+S1
+R1
+R6
+8rtl/multiplier.sv
+Frtl/multiplier.sv
+!i122 5
+L0 2 127
+R7
+R8
+r1
+!s85 0
+31
+R16
+R19
+R17
+!i113 0
+R12
+R13
+R2
+vtop_tb
+R14
+R4
+R18
+DXx4 work 7 alu_pkg 0 22 K?[njDo2a6>h<K=6ilo7`2
+R15
+!i10b 1
+!s100 b=?;i8FKaA4Z8fCC`2O^h1
+IZ;eNf[Z25i@X@d@T]0<CS1
+S1
+R1
+w1777406901
+8verif/top_tb.sv
+Fverif/top_tb.sv
+!i122 5
+L0 6 48
+R7
+R8
+r1
+!s85 0
+31
+R16
+R19
+R17
+!i113 0
+R12
+R13
+R2

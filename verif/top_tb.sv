@@ -16,7 +16,7 @@ module top_tb;
   (.clk(clk), .rst(rst));
 
   // Instanciação do DUT conectando à interface
-  alu_top #(
+  alu_top_multiplier #(
     .DATA_WIDTH(`DATA_WIDTH),
     .SEL_WIDTH(`SEL_WIDTH)
   ) dut (

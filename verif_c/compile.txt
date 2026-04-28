@@ -1,1 +1,0 @@
-gcc -shared -fPIC -o mydpi.so multiplier.c
