@@ -11,25 +11,25 @@ INCFLAGS = $(foreach d,$(INCDIRS),+incdir+$(d))
 SV_SOURCES = \
 	verif/alu_pkg.sv \
 	verif/alu_if.sv \
-	verif/components/*.sv \
-	verif/objects/*.sv \
-	rtl/alu_core.sv \
-	rtl/alu_top.sv \
+	rtl/multiplier.sv \
+	rtl/multiplier_top.sv \
 	verif/top_tb.sv
 
 DPI_C = verif_c/multiplier.c
-DPI_SO = verif_c/mydpi.so
+DPI_LIB = verif_c/mydpi
+DPI_SO = $(DPI_LIB).so
 
 SIM_ARGS = +UVM_TESTNAME=alu_test +UVM_NO_RELNOTES +UVM_VERBOSITY=UVM_LOW
 
-.PHONY: all help sim dpi clean
+.PHONY: all help sim sim-gui dpi clean
 
 all: sim
 
 help:
 	@echo "Uso: make [target]"
 	@echo "Targets:" 
-	@echo "  sim    - compila DPI e roda simulação com ModelSim/Questa"
+	@echo "  sim    - compila DPI e roda simulação em batch (terminal)"
+	@echo "  sim-gui - compila DPI e roda simulação em modo GUI"
 	@echo "  dpi    - compila a biblioteca DPI ($(DPI_SO))"
 	@echo "  clean  - remove artefatos gerados"
 
@@ -44,11 +44,20 @@ sim: dpi
 	@command -v $(VSIM) >/dev/null 2>&1 || { echo "vsim não encontrado. Instale ModelSim/Questa ou ajuste o PATH."; exit 1; }
 	@echo "Compilando fontes SystemVerilog..."
 	@$(VLOG) -sv -timescale=1ns/1ns $(INCFLAGS) $(SV_SOURCES)
-	@echo "Iniciando simulação ($(VSIM))..."
-	@$(VSIM) -voptargs=+acc $(TOP) $(SIM_ARGS) -sv_lib $(DPI_SO)
+	@echo "Iniciando simulação em batch ($(VSIM))..."
+	@$(VSIM) -c -voptargs=+acc $(TOP) $(SIM_ARGS) -sv_lib $(DPI_LIB) -do "run -all; quit -f"
+
+sim-gui: dpi
+	@command -v $(VLOG) >/dev/null 2>&1 || { echo "vlog não encontrado. Instale ModelSim/Questa ou ajuste o PATH."; exit 1; }
+	@command -v $(VSIM) >/dev/null 2>&1 || { echo "vsim não encontrado. Instale ModelSim/Questa ou ajuste o PATH."; exit 1; }
+	@echo "Compilando fontes SystemVerilog..."
+	@$(VLOG) -sv -timescale=1ns/1ns $(INCFLAGS) $(SV_SOURCES)
+	@echo "Iniciando simulação em GUI ($(VSIM))..."
+	@$(VSIM) -voptargs=+acc $(TOP) $(SIM_ARGS) -sv_lib $(DPI_LIB)
 
 clean:
 	@echo "Removendo artefatos..."
 	-@rm -f $(DPI_SO)
+	-@rm -f $(DPI_LIB)
 	-@rm -f transcript vsim.wlf ucli.key *.log *.log.*
 	-@rm -rf work

@@ -1,1 +1,6 @@
 verif_c/*.so
+vsim_stacktrace.vstf
+vsim.wlf
+work
+transcript
+verif_c/mydpi*

@@ -1,8 +1,0 @@
-1 7 uvm_pkg 4 fast 59 /soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d 1 0 26902528 0 136476 0
-1 14 questa_uvm_pkg 4 fast 59 /soft64/mentor/ferramentas/questa/2025.3/questasim/uvm-1.1d 1 0 1481728 26902528 7313 0
-1 7 alu_pkg 4 fast 47 /home/gabriel.kaizer/Documents/facul/porco/work 1 0 1527808 26902528 3272 0
-1 6 alu_if 5 synth 47 /home/gabriel.kaizer/Documents/facul/porco/work 1 0 0 0 0 0
-1 6 alu_if 7 fast__2 47 /home/gabriel.kaizer/Documents/facul/porco/work 1 0 0 0 32 0
-1 10 multiplier 4 fast 47 /home/gabriel.kaizer/Documents/facul/porco/work 1 0 0 0 189 0
-1 18 alu_top_multiplier 4 fast 47 /home/gabriel.kaizer/Documents/facul/porco/work 1 0 0 0 90 0
-1 6 top_tb 4 fast 47 /home/gabriel.kaizer/Documents/facul/porco/work 1 0 0 27557888 82 0
