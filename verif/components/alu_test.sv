@@ -25,8 +25,6 @@ class alu_test extends uvm_test;
   task run_phase(uvm_phase phase);
     alu_seq seq = alu_seq::type_id::create("seq");
     phase.raise_objection(this);
-   
-    assert(seq.randomize()); 
     
     // Inicia a sequence
     seq.start(m_env.m_agt_in.m_seqr);

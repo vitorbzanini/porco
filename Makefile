@@ -15,8 +15,8 @@ SV_SOURCES = \
 	rtl/multiplier_top.sv \
 	verif/top_tb.sv
 
-DPI_C = dpi/multiplier.c
-DPI_LIB = dpi/mydpi
+DPI_C = dpi/common.c
+DPI_LIB = dpi/dpi_common
 DPI_SO = $(DPI_LIB).so
 
 SIM_ARGS = +UVM_TESTNAME=alu_test +UVM_NO_RELNOTES +UVM_VERBOSITY=UVM_LOW
@@ -59,7 +59,7 @@ sim-gui: dpi
 
 clean:
 	@echo "Removendo artefatos..."
-	-@rm -f $(DPI_SO)
-	-@rm -f $(DPI_LIB)
-	-@rm -f transcript vsim.wlf ucli.key *.log *.log.*
+	-@rm -rf $(DPI_SO)
+	-@rm -rf $(DPI_LIB)
+	-@rm -rf transcript vsim.wlf ucli.key *.log *.log.*
 	-@rm -rf work
