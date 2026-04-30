@@ -21,6 +21,8 @@ DPI_SO = $(DPI_LIB).so
 
 SIM_ARGS = +UVM_TESTNAME=alu_test +UVM_NO_RELNOTES +UVM_VERBOSITY=UVM_LOW
 
+TIME=-all
+
 .PHONY: all help sim sim-gui dpi clean
 
 all: sim
@@ -45,7 +47,7 @@ sim: dpi
 	@echo "Compilando fontes SystemVerilog..."
 	@$(VLOG) -sv -timescale=1ns/1ns $(INCFLAGS) $(SV_SOURCES)
 	@echo "Iniciando simulação em batch ($(VSIM))..."
-	@$(VSIM) -c -voptargs=+acc $(TOP) $(SIM_ARGS) -sv_lib $(DPI_LIB) -do "run -all; quit -f"
+	@$(VSIM) -c -voptargs=+acc $(TOP) $(SIM_ARGS) -sv_lib $(DPI_LIB) -do "run ${TIME}; quit -f"
 
 sim-gui: dpi
 	@command -v $(VLOG) >/dev/null 2>&1 || { echo "vlog não encontrado. Instale ModelSim/Questa ou ajuste o PATH."; exit 1; }
@@ -53,7 +55,7 @@ sim-gui: dpi
 	@echo "Compilando fontes SystemVerilog..."
 	@$(VLOG) -sv -timescale=1ns/1ns $(INCFLAGS) $(SV_SOURCES)
 	@echo "Iniciando simulação em GUI ($(VSIM))..."
-	@$(VSIM) -voptargs=+acc $(TOP) $(SIM_ARGS) -sv_lib $(DPI_LIB)
+	@$(VSIM) -voptargs=+acc $(TOP) $(SIM_ARGS) -sv_lib $(DPI_LIB) -do "run ${TIME}; quit -f"
 
 clean:
 	@echo "Removendo artefatos..."
