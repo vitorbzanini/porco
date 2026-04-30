@@ -13,31 +13,7 @@ class alu_tx extends uvm_sequence_item;
       `uvm_field_int( data_ip_2, UVM_ALL_ON )
       `uvm_field_int( data_op, UVM_ALL_ON )
   `uvm_object_utils_end
-
-   constraint alu_sub { 
-     if (sel_ip == 3'b001) 
-      data_ip_1 >= data_ip_2; // Para evitar underflow
-   }
-   
-   constraint just_sum {
-      sel_ip == 3'b010; // Apenas teste de multiplicação
-   } 
-
-   constraint alu_data_width { 
-     if ((sel_ip == 3'b100) || (sel_ip == 3'b011))
-        data_ip_2 <= `DATA_WIDTH; // Corrigido
-   }
-
-   constraint alu__incr_dec { 
-     if ((sel_ip == 3'b101) || (sel_ip == 3'b110)){ 
-        data_ip_2 == 0; // Se é INCR/DECR o data_ip_2 não importa
-     }
-   }
-
-  function void print_2;
-    `uvm_info("PRINT_ITEM", $sformatf("%p", this), UVM_LOW)
-  endfunction : print_2
-
+  
   function new(string name = "alu_tx");
     super.new(name);
   endfunction: new 

@@ -14,10 +14,7 @@ class alu_seq extends uvm_sequence;
       m_item = alu_tx::type_id::create("m_item"); 
       start_item(m_item); 
       assert(m_item.randomize()); 
-       
-      // m_item.print();
-      m_item.print_2(); //printa
-      finish_item(m_item); //cabô
+      finish_item(m_item); 
     end
   endtask : body
 

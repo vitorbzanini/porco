@@ -23,21 +23,12 @@ module top_tb;
     .clk      (clk),
     .rst      (rst),
     .valid_ip (dut_if0.valid_ip),
-    .ready_ip (dut_if0.ready_ip),
     .data_ip_1(dut_if0.data_ip_1),
     .data_ip_2(dut_if0.data_ip_2),
-    .sel_ip   (dut_if0.sel_ip),
     .valid_op (dut_if0.valid_op),
     .ready_op (dut_if0.ready_op),
     .data_op  (dut_if0.data_op)
   );
-
-  // checker porco
-  always @ (posedge clk) begin
-    if (dut_if0.valid_op) begin 
-        $display("Testbench %d , %d e saiu %x", dut_if0.data_ip_1, dut_if0.data_ip_2, dut_if0.data_op);
-    end
-  end
 
   initial begin    
     clk = 1'b0;
@@ -46,8 +37,8 @@ module top_tb;
     forever #2 clk = ~clk;
   end
 
-  initial begin
-    uvm_config_db#(virtual alu_if)::set(null, "uvm_test_top", "vif", dut_if0);
-    run_test("alu_test");
-  end
+    initial begin
+      uvm_config_db#(virtual alu_if)::set(null, "uvm_test_top", "vif", dut_if0);
+      run_test("alu_test");
+    end
 endmodule: top_tb

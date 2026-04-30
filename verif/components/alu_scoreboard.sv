@@ -16,13 +16,9 @@ class alu_scoreboard extends uvm_scoreboard;
     
     expected_res = multiplier(pkt.data_ip_1, pkt.data_ip_2); 
 
-    //expected_res = pkt.data_ip_1 + pkt.data_ip_2;
-
-    $display("DEBUG: data_op=%0h expected=%0h e pkt.sel_ip = %d", pkt.data_op, expected_res, pkt.sel_ip);
-
     if(pkt.data_op == expected_res)
-      `uvm_info("SCBD_MATCH", $sformatf("Sucesso! Sel:%0d Res:%0h", pkt.sel_ip, pkt.data_op), UVM_LOW)
+      `uvm_info("SCBD_MATCH", $sformatf("Sucesso! Exp:%0h Obtido:%0h", expected_res, pkt.data_op), UVM_LOW)
     else
-      `uvm_error("SCBD_MISMATCH", $sformatf("Erro! Sel:%0d Exp:%0h Obtido:%0h", pkt.sel_ip, expected_res, pkt.data_op))
+      `uvm_error("SCBD_MISMATCH", $sformatf("Erro! Exp:%0h Obtido:%0h", expected_res, pkt.data_op))
   endfunction
 endclass

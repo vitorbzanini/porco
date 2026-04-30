@@ -14,10 +14,8 @@ class alu_driver extends uvm_driver #(alu_tx);
     
     // 1. INICIALIZAÇÃO (Acaba com os sinais vermelhos!)
     vif.valid_ip  <= 1'b0;
-    vif.sel_ip    <= '0;
     vif.data_ip_1 <= '0;
     vif.data_ip_2 <= '0;
-    vif.ready_ip  <= 1'b1; // Avisa ao DUT que sempre estamos prontos para ler a saída
     
     // 2. Espera o Reset abaixar antes de fazer qualquer coisa
     wait(vif.rst == 1'b0);
@@ -40,7 +38,6 @@ class alu_driver extends uvm_driver #(alu_tx);
 
     // Coloca os dados no barramento e levanta a flag de válido
     vif.valid_ip  <= 1'b1; // Forçamos para 1 para garantir que o DUT veja
-    vif.sel_ip    <= m_item.sel_ip;
     vif.data_ip_1 <= m_item.data_ip_1;
     vif.data_ip_2 <= m_item.data_ip_2;
 

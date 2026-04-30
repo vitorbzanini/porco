@@ -15,8 +15,8 @@ SV_SOURCES = \
 	rtl/multiplier_top.sv \
 	verif/top_tb.sv
 
-DPI_C = verif_c/multiplier.c
-DPI_LIB = verif_c/mydpi
+DPI_C = dpi/multiplier.c
+DPI_LIB = dpi/mydpi
 DPI_SO = $(DPI_LIB).so
 
 SIM_ARGS = +UVM_TESTNAME=alu_test +UVM_NO_RELNOTES +UVM_VERBOSITY=UVM_LOW
