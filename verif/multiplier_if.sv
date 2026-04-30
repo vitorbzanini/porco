@@ -1,8 +1,8 @@
-`ifndef alu_if__sv
-`define alu_if__sv
-//  Interface: alu_if
+`ifndef multiplier_if__sv
+`define multiplier_if__sv
+//  Interface: multiplier_if
 //
-interface alu_if
+interface multiplier_if
   /*  package imports  */
   #(
     parameter DATA_WIDTH  = 16,
@@ -15,6 +15,6 @@ interface alu_if
   logic                         valid_op, ready_op;
   logic [((DATA_WIDTH*2)-1):0]  data_op;
 
-endinterface: alu_if
+endinterface: multiplier_if
 
 `endif

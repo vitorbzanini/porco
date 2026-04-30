@@ -1,12 +1,12 @@
-// Arquivo: verif/components/alu_driver.sv
-class alu_driver extends uvm_driver #(alu_tx);
-  `uvm_component_utils(alu_driver)
+// Arquivo: verif/components/multiplier_driver.sv
+class multiplier_driver extends uvm_driver #(multiplier_tx);
+  `uvm_component_utils(multiplier_driver)
 
-  virtual alu_if vif;
+  virtual multiplier_if vif;
   
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-    assert(uvm_config_db#(virtual alu_if)::get(this, "", "vif", vif));
+    assert(uvm_config_db#(virtual multiplier_if)::get(this, "", "vif", vif));
   endfunction: build_phase
   
   task run_phase(uvm_phase phase);
@@ -22,7 +22,7 @@ class alu_driver extends uvm_driver #(alu_tx);
     @(posedge vif.clk);
 
     forever begin
-      alu_tx m_item;
+      multiplier_tx m_item;
       seq_item_port.get_next_item(m_item);
       
       // 3. Injeta a transação
@@ -32,7 +32,7 @@ class alu_driver extends uvm_driver #(alu_tx);
     end
   endtask: run_phase
 
-  task drive_item(alu_tx m_item);
+  task drive_item(multiplier_tx m_item);
     // Sincroniza com a borda de subida do clock
     @(posedge vif.clk iff vif.ready_op == 1'b1);
 
@@ -51,7 +51,7 @@ class alu_driver extends uvm_driver #(alu_tx);
     @(posedge vif.clk);
   endtask : drive_item
 
-  function new(string name = "alu_driver", uvm_component parent);
+  function new(string name = "multiplier_driver", uvm_component parent);
     super.new(name, parent);
   endfunction: new
-endclass: alu_driver
+endclass: multiplier_driver

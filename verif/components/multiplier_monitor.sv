@@ -1,26 +1,26 @@
-//  Class: alu_monitor
+//  Class: multiplier_monitor
 //
-class alu_monitor extends uvm_monitor;
-  `uvm_component_utils(alu_monitor)
+class multiplier_monitor extends uvm_monitor;
+  `uvm_component_utils(multiplier_monitor)
 
   //  Group: Components
-  virtual alu_if vif;
+  virtual multiplier_if vif;
 
   //  Group: Variables
-  uvm_analysis_port #(alu_tx) mon_analysis_port;
+  uvm_analysis_port #(multiplier_tx) mon_analysis_port;
   
   // uvm_active_passive_enum is_active = UVM_ACTIVE;
 
   //  Group: Functions
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);   
-    assert(uvm_config_db#(virtual alu_if)::get(this, "", "vif", vif));
+    assert(uvm_config_db#(virtual multiplier_if)::get(this, "", "vif", vif));
     mon_analysis_port = new("mon_analysis_port", this);
 
   endfunction: build_phase
 
   task run_phase(uvm_phase phase);
-    alu_tx item;
+    multiplier_tx item;
     super.run_phase(phase);
 
     forever begin
@@ -44,11 +44,11 @@ class alu_monitor extends uvm_monitor;
   endtask: run_phase
 
   //  Constructor: new
-  function new(string name = "alu_monitor", uvm_component parent);
+  function new(string name = "multiplier_monitor", uvm_component parent);
     super.new(name, parent);
   endfunction: new
 
-endclass: alu_monitor
+endclass: multiplier_monitor
 
 
 

@@ -1,17 +1,17 @@
-class alu_test extends uvm_test;
-  `uvm_component_utils(alu_test)
+class multiplier_test extends uvm_test;
+  `uvm_component_utils(multiplier_test)
 
-  alu_env   m_env;
-  virtual alu_if vif;
+  multiplier_env   m_env;
+  virtual multiplier_if vif;
 
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-    m_env = alu_env::type_id::create("m_env", this);
+    m_env = multiplier_env::type_id::create("m_env", this);
 
-    assert(uvm_config_db#(virtual alu_if)::get(this, "", "vif", vif)); 
+    assert(uvm_config_db#(virtual multiplier_if)::get(this, "", "vif", vif)); 
     
-    uvm_config_db#(virtual alu_if)::set(this, "m_env.m_agt_in.*", "vif", vif);
-    uvm_config_db#(virtual alu_if)::set(this, "m_env.m_agt_out.*", "vif", vif);
+    uvm_config_db#(virtual multiplier_if)::set(this, "m_env.m_agt_in.*", "vif", vif);
+    uvm_config_db#(virtual multiplier_if)::set(this, "m_env.m_agt_out.*", "vif", vif);
   endfunction: build_phase
   
   function void connect_phase(uvm_phase phase);
@@ -23,7 +23,7 @@ class alu_test extends uvm_test;
   endfunction: end_of_elaboration_phase
 
   task run_phase(uvm_phase phase);
-    alu_seq seq = alu_seq::type_id::create("seq");
+    multiplier_seq seq = multiplier_seq::type_id::create("seq");
     phase.raise_objection(this);
     
     // Inicia a sequence
@@ -33,8 +33,8 @@ class alu_test extends uvm_test;
     phase.drop_objection(this);  
   endtask: run_phase
   
-  function new(string name = "alu_test", uvm_component parent);
+  function new(string name = "multiplier_test", uvm_component parent);
     super.new(name, parent);
   endfunction: new
 
-endclass: alu_test
+endclass: multiplier_test

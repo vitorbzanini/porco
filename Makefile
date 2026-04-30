@@ -9,8 +9,8 @@ INCDIRS = verif verif/headers verif/objects verif/components
 INCFLAGS = $(foreach d,$(INCDIRS),+incdir+$(d))
 
 SV_SOURCES = \
-	verif/alu_pkg.sv \
-	verif/alu_if.sv \
+	verif/multiplier_pkg.sv \
+	verif/multiplier_if.sv \
 	rtl/multiplier.sv \
 	rtl/multiplier_top.sv \
 	verif/top_tb.sv
@@ -19,7 +19,7 @@ DPI_C = dpi/common.c
 DPI_LIB = dpi/dpi_common
 DPI_SO = $(DPI_LIB).so
 
-SIM_ARGS = +UVM_TESTNAME=alu_test +UVM_NO_RELNOTES +UVM_VERBOSITY=UVM_LOW
+SIM_ARGS = +UVM_TESTNAME=multiplier_test +UVM_NO_RELNOTES +UVM_VERBOSITY=UVM_LOW
 
 TIME=-all
 

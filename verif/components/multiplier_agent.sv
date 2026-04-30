@@ -1,18 +1,18 @@
-//  Class: alu_agent
+//  Class: multiplier_agent
 //
-class alu_agent extends uvm_agent;
+class multiplier_agent extends uvm_agent;
 
- //uvm_analysis_port #(alu_tx) alu_ap; não deveria ter uma ap aqui?
+ //uvm_analysis_port #(multiplier_tx) multiplier_ap; não deveria ter uma ap aqui?
 
   //  Group: Components
-  alu_sequencer   m_seqr;  
-  alu_driver      m_drv;
-  alu_monitor     m_mon;  
+  multiplier_sequencer   m_seqr;  
+  multiplier_driver      m_drv;
+  multiplier_monitor     m_mon;  
 
   //  Group: Variables
-  uvm_analysis_port #(alu_tx) mon_analysis_port;
+  uvm_analysis_port #(multiplier_tx) mon_analysis_port;
   uvm_active_passive_enum is_active = UVM_ACTIVE;
-  `uvm_component_utils_begin(alu_agent)
+  `uvm_component_utils_begin(multiplier_agent)
   `uvm_field_enum(uvm_active_passive_enum, is_active, UVM_ALL_ON)
   `uvm_component_utils_end
 
@@ -20,12 +20,12 @@ class alu_agent extends uvm_agent;
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     mon_analysis_port = new( "mon_analysis_port", this);
-    m_mon   = alu_monitor   ::type_id::create("m_mon" , this);
+    m_mon   = multiplier_monitor   ::type_id::create("m_mon" , this);
     assert(uvm_config_db#(uvm_active_passive_enum)::get(this, "", "is_active", is_active));
     
     if (is_active == UVM_ACTIVE) begin
-      m_seqr  = alu_sequencer ::type_id::create("m_seqr", this);
-      m_drv   = alu_driver    ::type_id::create("m_drv" , this);
+      m_seqr  = multiplier_sequencer ::type_id::create("m_seqr", this);
+      m_drv   = multiplier_driver    ::type_id::create("m_drv" , this);
     end
   endfunction: build_phase
   
@@ -38,11 +38,11 @@ class alu_agent extends uvm_agent;
   endfunction: connect_phase
 
   //  Constructor: new
-  function new(string name = "alu_agent", uvm_component parent);
+  function new(string name = "multiplier_agent", uvm_component parent);
     super.new(name, parent);
   endfunction: new
   
-endclass: alu_agent
+endclass: multiplier_agent
 
 
 

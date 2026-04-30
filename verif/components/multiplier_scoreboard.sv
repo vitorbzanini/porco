@@ -1,17 +1,17 @@
 import "DPI" function int multiplier(input int a, input int n);  
 
-class alu_scoreboard extends uvm_scoreboard;
+class multiplier_scoreboard extends uvm_scoreboard;
   
-  `uvm_component_utils(alu_scoreboard)
+  `uvm_component_utils(multiplier_scoreboard)
   
-  uvm_analysis_imp #(alu_tx, alu_scoreboard) item_collected_export;
+  uvm_analysis_imp #(multiplier_tx, multiplier_scoreboard) item_collected_export;
   
   function new(string name, uvm_component parent);
     super.new(name, parent);
     item_collected_export = new("item_collected_export", this);
   endfunction
 
-  virtual function void write(alu_tx pkt);
+  virtual function void write(multiplier_tx pkt);
     bit [31:0] expected_res; // DATA_WIDTH*2
     
     expected_res = multiplier(pkt.data_ip_1, pkt.data_ip_2); 

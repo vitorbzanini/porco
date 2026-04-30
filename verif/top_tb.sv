@@ -1,22 +1,22 @@
-`include "alu_config.svh"
-// `include "alu_if.sv"
-// `include "alu_pkg.sv"
+`include "multiplier_config.svh"
+// `include "multiplier_if.sv"
+// `include "multiplier_pkg.sv"
 `include "uvm_macros.svh"
 
 module top_tb;
   import uvm_pkg::*;
-  import alu_pkg::*;
+  import multiplier_pkg::*;
 
   logic clk, rst;
 
   localparam DATA_WIDTH = `DATA_WIDTH;
   localparam SEL_WIDTH = `SEL_WIDTH;
 
-  alu_if #( .DATA_WIDTH(DATA_WIDTH), .SEL_WIDTH(SEL_WIDTH))dut_if0 
+  multiplier_if #( .DATA_WIDTH(DATA_WIDTH), .SEL_WIDTH(SEL_WIDTH))dut_if0 
   (.clk(clk), .rst(rst));
 
   // Instanciação do DUT conectando à interface
-  alu_top_multiplier #(
+  multiplier_top #(
     .DATA_WIDTH(`DATA_WIDTH),
     .SEL_WIDTH(`SEL_WIDTH)
   ) dut (
@@ -38,7 +38,7 @@ module top_tb;
   end
 
     initial begin
-      uvm_config_db#(virtual alu_if)::set(null, "uvm_test_top", "vif", dut_if0);
-      run_test("alu_test");
+      uvm_config_db#(virtual multiplier_if)::set(null, "uvm_test_top", "vif", dut_if0);
+      run_test("multiplier_test");
     end
 endmodule: top_tb

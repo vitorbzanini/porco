@@ -1,6 +1,6 @@
-//  Module: alu_top
+//  Module: multiplier_top
 //
-module alu_top_multiplier
+module multiplier_top
   /*  package imports  */
   #(
     parameter DATA_WIDTH  = 8,
@@ -17,7 +17,7 @@ module alu_top_multiplier
 
   assign ready_op = ready_op_w;
 
-  always_ff@ (posedge clk, posedge rst)				//SHIFT REGISTER A 32 bit
+  always_ff@ (posedge clk, posedge rst)
   begin 
     if (rst == 1'b1) begin
       ready_op_w <= 1'b1;
@@ -39,4 +39,4 @@ module alu_top_multiplier
       .done       (valid_op)  
     );
 
-endmodule: alu_top_multiplier
+endmodule: multiplier_top
