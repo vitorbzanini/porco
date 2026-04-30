@@ -13,7 +13,6 @@ module alu_top_multiplier
     output reg  [((DATA_WIDTH*2)-1):0]  data_op
   );
 
-  logic [3:0] cont;
   logic ready_op_w;
 
   assign ready_op = ready_op_w;
@@ -22,16 +21,10 @@ module alu_top_multiplier
   begin 
     if (rst == 1'b1) begin
       ready_op_w <= 1'b1;
-      cont       <= 4'b0000; 
     end
     else  begin 
       if (valid_ip) ready_op_w <= 1'b0;
-      else if (valid_op)  cont <= cont + 4'b0001;
-      else if(cont > 4'b0110) begin 
-        ready_op_w <= 1'b1;
-        cont       <= 4'b0000; 
-      end
-      else if(cont >= 4'b0001) cont <= cont + 4'b0001;
+      else if (valid_op) ready_op_w <= 1'b1;
     end
   end
 

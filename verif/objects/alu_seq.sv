@@ -18,8 +18,8 @@ class alu_seq extends uvm_sequence;
       
       start_item(m_item); 
 
-      m_item.data_ip_1 = data1;
-      m_item.data_ip_2 = data2;
+      m_item.data_ip_1 <= data1;
+      m_item.data_ip_2 <= data2;
 
       finish_item(m_item); 
     end

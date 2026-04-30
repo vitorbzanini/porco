@@ -34,7 +34,7 @@ class alu_driver extends uvm_driver #(alu_tx);
 
   task drive_item(alu_tx m_item);
     // Sincroniza com a borda de subida do clock
-    @(posedge vif.clk iff vif.ready_op === 1'b1);
+    @(posedge vif.clk iff vif.ready_op == 1'b1);
 
     // Coloca os dados no barramento e levanta a flag de válido
     vif.valid_ip  <= 1'b1; // Forçamos para 1 para garantir que o DUT veja

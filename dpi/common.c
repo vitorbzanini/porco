@@ -91,6 +91,7 @@ int get_num_vectors(void) {
     return NUM_VECTORS;
 }
 
+// Função de teste (scoreboard)
 int multiplier(int in1, int in2)
 {
     return in1 * in2;
